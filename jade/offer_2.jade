@@ -1,0 +1,243 @@
+include mixins
+doctype html
+html(lang='ru')
+  +dev_head('Printlot offer 2', false, false, false, true)
+
+  body
+    .wrapper.header_v2
+      .base
+        div.header
+          .section_inner.top_nav
+            .logo_block
+              a.logo.icon_before.icon_after.icon-logo_text(href='index.html')
+                // -img(src='i/logo_small.png')
+
+            a.big_logo.icon_before.icon-logo(href='index.html')
+            
+            .swiper-container.navSlider.main_menu_slider
+              ul.main_menu.swiper-wrapper
+                li.main_m_item.swiper-slide: a.gl_link(href='index.html') ГЛАВНАЯ
+                li.main_m_item.swiper-slide.active: a.gl_link(href='offer_1.html') ЗАКАЗАТЬ
+                li.main_m_item.swiper-slide: a.gl_link(href='#') ПОСТАВЩИКИ
+                li.main_m_item.swiper-slide: a.gl_link(href='#') ТЕРМИНЫ
+                li.main_m_item.swiper-slide: a.gl_link(href='#') О ПРОЕКТЕ
+
+            ul.user_block
+              li
+                .user_menu
+                  .user_avatar.icon_before.icon-account
+                    //img(src='i/user_avatar.png')
+                    .user_counter 16
+                  .user_name Арман Акопян
+
+        div.main_content: .section_inner
+          .order_step
+            a.go_back_link(href='#') Назад
+            .order_step_icon.icon_before.icon-leaflet
+            .order_step_caption Вы выбрали “листовки”
+            p Пожалуйста, настройте те параметры, которые Вам нужны
+            
+            p.text_center.dt_hidden
+              a.other_item_link(href='#') Выбрать другое изделие
+              
+          .order_form_holder: form#order_form(action='#'): .order_holder
+            .order_block.mod_1
+              .error_msg Пожалуйста заполните все текстовые поля !
+              .form_caption.mob_hidden Параметры листовки
+              .params_block
+                .form_cell.text_center
+                  .form_label Размер:
+                  .param_val
+                    span#sizeRange_val Евро (210x99mm)
+                .range_holder.toddler_v1.no_pips
+                  #size_range_toddler.range_toddler
+                    input.toddler_input
+
+                .form_cell.text_center
+                  .form_label Плотность:
+                  .param_val
+                    span#dpiRange_val 115 
+                    span  г/см²
+                .range_holder.toddler_v1.no_pips
+                  #dpi_range_toddler.range_toddler
+                    input.toddler_input
+
+                .form_cell.text_center: .radio_emul_block
+                  input#print_side.radio_input(checked , type='checkbox')
+                  .form_label Тип:
+                  .param_val
+                    span.unchecked_text Односторонняя
+                    span.checked_text Двусторонняя
+                  label.radio_emul.radioSwipe(for='print_side')
+                    span.radio_text Односторонняя
+                    span.radio_toggle: .toggle_pin
+                    span.radio_text Двусторонняя
+                    
+                .form_cell.text_center: .radio_emul_block
+                  input#print_delivery.radio_input(type='checkbox', onchange="delivery_validation()")
+                  .form_label Доставка:
+                  .param_val
+                    span.checked_text Да
+                    span.unchecked_text Нет
+                  label.radio_emul.radioSwipe(for='print_delivery')
+                    span.radio_text Самовывоз
+                    span.radio_toggle: .toggle_pin
+                    span.radio_text С доставкой
+                  .delivery_address_block
+                    .form_cell
+                      label.form_label(for='order_address') Адрес 
+                      .input_w: input#order_address.f_input_v1.text_left( placeholder='Город, Улица, Дом' class='validate[required]')
+                      .input_w.text_right
+                        label.check_emul
+                          input.radio_input(type='checkbox')
+                          span.check_text.form_label.icon_before Запомнить этот адрес
+                    
+              .params_block.mod_2
+                .form_cell
+                  label.form_label(for='order_quantity') Количество
+                  .input_w: input#order_quantity.f_input_v1( onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder='Нажмите для начала ввода' value='1000' maxlength=6 class='validate[required,custom[integer],min[100],max[100000]]')
+
+              .submit_spacer
+              //.params_block
+                .form_cell.text_center
+                  button.btn_v2.start_btn.blue_btn: span Запросить цены
+
+            .order_block_custom.customBlock
+              .order_block_custom_top
+                //.error_msg Пожалуйста заполните все текстовые поля !
+                .form_caption Дополнительные параметры
+              .param_receiver
+                
+                .text_center.hide_on_open.param_receiver_tip При желании Вы можете добавить дополнительныйпараметр, нажав на кнопку (+) 
+                .text_center.mob_tip.param_receiver_tip Перетащите плашку влево или вправо, чтобы удалить добавленный параметр
+                .paramReceiver
+                  span.receivMarker
+
+              .param_stack_overlay.paramStackOverlay
+              .param_stack_holder.paramStackHolder
+                .param_stack.paramStack
+                  .custom_param_unit.paramUnit: .custom_pu_inner.mod_2
+                    a.add_param_btn.addParamBtn(href='#')
+                    .custom_param_val
+                      .custom_param_name Другой материал
+                      .custom_param_default По умолчанию: бумага
+                    .custom_param_change
+                      .form_cell
+                        label.form_label(for='order_quantity') Материал
+                        .input_w.chosen_v1.no_search
+                          select.chosen-select
+                            option(value=0 data-title='Пленка') Пленка
+                            option(value=1 data-title='Пластик') Пластик
+                            option(value=2 data-title='Картон') Картон
+                            option(value=3 data-title='Баннерная сетка') Баннерная сетка
+                            option(value=4 data-title='Баннерная ткань') Баннерная ткань
+                            option(value=5 data-title='Бумага') Бумага
+                        
+                  .custom_param_unit.paramUnit: .custom_pu_inner
+                    a.add_param_btn.addParamBtn(href='#')
+                    .custom_param_val
+                      .custom_param_name Цветность печати
+                      .custom_param_default По умолчанию: цветная
+                    .custom_param_change
+                      .form_cell.text_center: .radio_emul_block
+                        input#print_colored.radio_input(checked , type='checkbox')
+                        .form_label Цветность печати:
+                        .param_val
+                          span.unchecked_text Черно-белая 
+                          span.checked_text Цветная
+                        label.radio_emul.radioSwipe(for='print_colored')
+                          span.radio_text Черно-белая 
+                          span.radio_toggle: .toggle_pin
+                          span.radio_text Цветная
+  
+                  .custom_param_unit.paramUnit: .custom_pu_inner.mod_2
+                    a.add_param_btn.addParamBtn(href='#')
+                    .custom_param_val
+                      .custom_param_name Качество печати
+                      .custom_param_default По умолчанию: 300 DPI
+                    .custom_param_change
+                      .form_cell
+                        label.form_label(for='order_quantity') Качество
+                        .input_w.chosen_v1.no_search
+                          select.chosen-select
+                            option(value=0 data-title='50 DPI') 50 DPI
+                            option(value=1 data-title='100 DPI') 100 DPI
+                            option(value=2 data-title='500 DPI') 500 DPI
+                            option(value=3 data-title='1000 DPI') 1000 DPI
+                            option(value=4 data-title='2000 DPI') 2000 DPI
+  
+                  .custom_param_unit.paramUnit: .custom_pu_inner.mod_1
+                    a.add_param_btn.addParamBtn(href='#')
+                    .custom_param_val
+                      .custom_param_name Пост обработка
+                    .custom_param_change
+                      .form_cell.text_center
+                        span.form_label Пост оброботка:
+                        span#postprocessing_val.param_val
+                      .form_cell
+                        ul.postprocessing_list
+                          li
+                            label.check_emul.check_left_mod
+                              input.radio_input.postProcessingCheck(type='checkbox')
+                              span.check_text.form_label.icon_before Ламинация
+                          li
+                            label.check_emul.check_left_mod
+                              input.radio_input.postProcessingCheck(type='checkbox')
+                              span.check_text.form_label.icon_before Скрепление
+                          li
+                            label.check_emul.check_left_mod
+                              input.radio_input.postProcessingCheck(type='checkbox')
+                              span.check_text.form_label.icon_before Лакирование
+                          li
+                            label.check_emul.check_left_mod
+                              input.radio_input.postProcessingCheck(type='checkbox')
+                              span.check_text.form_label.icon_before Тиснение
+                          li
+                            label.check_emul.check_left_mod
+                              input.radio_input.postProcessingCheck(type='checkbox')
+                              span.check_text.form_label.icon_before Вырубка
+  
+                  .custom_param_unit.paramUnit: .custom_pu_inner.mod_2
+                    a.add_param_btn.addParamBtn(href='#')
+                    .custom_param_val
+                      .custom_param_name Прикрепить файл печати
+                    .custom_param_change
+                      .form_cell
+                        label.form_label(for='file_attach') Файл печати
+                        .input_w.attach_mod.swipeVeil
+                          label.file_label(for='file_attach')
+                          input#file_attach.hide(type='file')
+                          input#file_attach_name.f_input_v1.text_center.unveilInput()
+  
+                  .custom_param_unit.paramUnit: .custom_pu_inner
+                    a.add_param_btn.addParamBtn(href='#')
+                    .custom_param_val
+                      .custom_param_name Сообщение поставщику
+                    .custom_param_change
+                      .form_cell
+                        label.form_label(for='distrib_msg') Сообщение поставщику
+                        .input_w.swipeVeil
+                          textarea#distrib_msg.unveilInput.f_input_v1.text_left(placeholder='Введите любую дополнительную информацию о заказе, которую посчитаете нужной...')
+
+                  a.add_param_btn.closeParamBtnMob.dt_hidden(href='#')
+                    span Закрыть
+                          
+              .submit_holder
+                a.add_param_btn.addParamBtnMob.dt_hidden(href='#')
+                  span Закрыть
+
+                .params_block
+                  .form_cell.text_center
+                    button.btn_v2.start_btn.blue_btn: span Запросить цены
+                        
+      .footer
+        .section_inner
+          .logo_block
+            a.logo(href='#'): img(src='i/logo_small.png')
+
+          .soc_block
+            span СЛЕДИТЕ ЗА НАМИ:
+            a.soc_link(href='#'): span.fa.fa-facebook
+            a.soc_link(href='#'): span.fa.fa-vk
+
+          .copyright OOO “ПРИНТЛОТ” ВСЕ ПРАВА ЗАЩИЩЕНЫ  (С) 2015

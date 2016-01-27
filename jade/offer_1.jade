@@ -1,0 +1,146 @@
+include mixins
+doctype html
+html(lang='ru')
+  +dev_head('Printlot offer 1', false, false, true)
+
+  body
+    .wrapper.header_v2
+      .base
+        div.header
+          .section_inner.top_nav
+            .logo_block
+              a.logo.icon_before.icon_after.icon-logo_text(href='index.html')
+                // -img(src='i/logo_small.png')
+
+            a.big_logo.icon_before.icon-logo(href='index.html')
+            
+            .swiper-container.navSlider.main_menu_slider
+              ul.main_menu.swiper-wrapper
+                li.main_m_item.swiper-slide: a.gl_link(href='index.html') ГЛАВНАЯ
+                li.main_m_item.swiper-slide.active: a.gl_link(href='offer_1.html') ЗАКАЗАТЬ
+                li.main_m_item.swiper-slide: a.gl_link(href='#') ПОСТАВЩИКИ
+                li.main_m_item.swiper-slide: a.gl_link(href='#') ТЕРМИНЫ
+                li.main_m_item.swiper-slide: a.gl_link(href='#') О ПРОЕКТЕ
+            
+            ul.user_block
+              li
+                .user_menu
+                  .user_avatar
+                    img(src='i/user_avatar.png')
+                    .user_counter 16
+                  .user_name Арман Акопян
+                    
+        div.main_content: .section_inner
+          h2.section_title Пожалуйста, выберите нужное изделие
+          
+          .last_orders
+            p Вы недавно заказывали...
+            .swiper-container.lastOrdersSlider.last_orders_slider
+              ul.last_orders_list.swiper-wrapper
+                +loop_while(1)
+                  li.product_item.swiper-slide
+                    a.order_item(href='#')
+                      .order_i_icon.icon-leaflet
+                      .order_i_name Листовки
+                  li.product_item.swiper-slide
+                    a.order_item(href='#')
+                      .order_i_icon.icon-bill
+                      .order_i_name Плакаты
+                      
+          .product_list_w
+            ul.product_list
+              li.product_item.slideWidth
+                a.order_item(href='#')
+                  .order_i_icon.icon-banner
+                  .order_i_name Баннеры
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-journal
+                  .order_i_name Журналы
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-sticker
+                  .order_i_name Наклейки
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-blank
+                  .order_i_name Бланки
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-calendar
+                  .order_i_name Календари
+                  
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-postcard
+                  .order_i_name Открытки
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-brochure
+                  .order_i_name Брошьюры
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-catalogue
+                  .order_i_name Каталоги
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-bill
+                  .order_i_name Плакаты
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-booklet
+                  .order_i_name Буклеты
+                                      
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-book
+                  .order_i_name Книги
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-prospect
+                  .order_i_name Проспекты
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-business_card
+                  .order_i_name Визитки
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-envelope
+                  .order_i_name Конверты
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-circuit
+                  .order_i_name Чертежи
+                                                          
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-newspaper
+                  .order_i_name Газеты
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-leaflet
+                  .order_i_name Листовки
+              li.product_item
+                a.order_item(href='#')
+                  .order_i_icon.icon-label
+                  .order_i_name Этикетки
+              li.product_item
+                .order_item.orderOtherBtn
+                  .order_i_icon.icon-other
+                  .order_i_name Другое
+                  .order_expand: form(action='#')
+                    p Название изделия
+                    .input_w: input.f_input_v1.text_center(placeholder='Название')
+                    button.new_order_btn.btn_v1.light_blue_btn OK
+
+      .footer
+        .section_inner
+          .logo_block
+            a.logo(href='#'): img(src='i/logo_small.png')
+
+          .soc_block
+            span СЛЕДИТЕ ЗА НАМИ:
+            a.soc_link(href='#'): span.fa.fa-facebook
+            a.soc_link(href='#'): span.fa.fa-vk
+
+          .copyright OOO “ПРИНТЛОТ” ВСЕ ПРАВА ЗАЩИЩЕНЫ  (С) 2015

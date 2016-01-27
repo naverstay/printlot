@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Printlot offer 2</title><!-- saved from url=(0014)about:internet -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!--link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', media='all')-->
+    <link rel="stylesheet" href="styles/font-awesome.min.css" media="all"/>
+    <link rel="stylesheet" href="styles/main_global.css" media="all"/>
+    <link type="image/x-icon" rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="favicon/32x32.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/72x72.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/76x76.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/114x114.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/120x120.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/152x152.png"/>
+    <script src="js/jquery1.10.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/chosen.jquery.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+    <script src="js/nouislider.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/jquery.validationEngine.js"></script>
+    <script src="js/jquery.validationEngine-ru.js"></script>
+    <script src="js/offer_2.js"></script>
+  </head>
+  <body>
+    <div class="wrapper header_v2">
+      <div class="base">
+        <div class="header">
+          <div class="section_inner top_nav">
+            <div class="logo_block"><a href="index.html" class="logo icon_before icon_after icon-logo_text">
+                <!-- -img(src='i/logo_small.png')--></a></div><a href="index.html" class="big_logo icon_before icon-logo"></a>
+            <div class="swiper-container navSlider main_menu_slider">
+              <ul class="main_menu swiper-wrapper">
+                <li class="main_m_item swiper-slide"><a href="index.html" class="gl_link">ГЛАВНАЯ</a></li>
+                <li class="main_m_item swiper-slide active"><a href="offer_1.html" class="gl_link">ЗАКАЗАТЬ</a></li>
+                <li class="main_m_item swiper-slide"><a href="#" class="gl_link">ПОСТАВЩИКИ</a></li>
+                <li class="main_m_item swiper-slide"><a href="#" class="gl_link">ТЕРМИНЫ</a></li>
+                <li class="main_m_item swiper-slide"><a href="#" class="gl_link">О ПРОЕКТЕ</a></li>
+              </ul>
+            </div>
+            <ul class="user_block">
+              <li>
+                <div class="user_menu">
+                  <div class="user_avatar icon_before icon-account">
+                    <!--img(src='i/user_avatar.png')-->
+                    <div class="user_counter">16</div>
+                  </div>
+                  <div class="user_name">Арман Акопян</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="main_content">
+          <div class="section_inner">
+            <div class="order_step"><a href="#" class="go_back_link">Назад</a>
+              <div class="order_step_icon icon_before icon-leaflet"></div>
+              <div class="order_step_caption">Вы выбрали “листовки”</div>
+              <p>Пожалуйста, настройте те параметры, которые Вам нужны</p>
+              <p class="text_center dt_hidden"><a href="#" class="other_item_link">Выбрать другое изделие</a></p>
+            </div>
+            <div class="order_form_holder">
+              <form id="order_form" action="#">
+                <div class="order_holder">
+                  <div class="order_block mod_1">
+                    <div class="error_msg">Пожалуйста заполните все текстовые поля !</div>
+                    <div class="form_caption mob_hidden">Параметры листовки</div>
+                    <div class="params_block">
+                      <div class="form_cell text_center">
+                        <div class="form_label">Размер:</div>
+                        <div class="param_val"><span id="sizeRange_val">Евро (210x99mm)</span></div>
+                      </div>
+                      <div class="range_holder toddler_v1 no_pips">
+                        <div id="size_range_toddler" class="range_toddler">
+                          <input class="toddler_input">
+                        </div>
+                      </div>
+                      <div class="form_cell text_center">
+                        <div class="form_label">Плотность:</div>
+                        <div class="param_val"><span id="dpiRange_val">115 </span><span> г/см²</span></div>
+                      </div>
+                      <div class="range_holder toddler_v1 no_pips">
+                        <div id="dpi_range_toddler" class="range_toddler">
+                          <input class="toddler_input">
+                        </div>
+                      </div>
+                      <div class="form_cell text_center">
+                        <div class="radio_emul_block">
+                          <input id="print_side" checked type="checkbox" class="radio_input">
+                          <div class="form_label">Тип:</div>
+                          <div class="param_val"><span class="unchecked_text">Односторонняя</span><span class="checked_text">Двусторонняя</span></div>
+                          <label for="print_side" class="radio_emul radioSwipe"><span class="radio_text">Односторонняя</span><span class="radio_toggle">
+                              <div class="toggle_pin"></div></span><span class="radio_text">Двусторонняя</span></label>
+                        </div>
+                      </div>
+                      <div class="form_cell text_center">
+                        <div class="radio_emul_block">
+                          <input id="print_delivery" type="checkbox" onchange="delivery_validation()" class="radio_input">
+                          <div class="form_label">Доставка:</div>
+                          <div class="param_val"><span class="checked_text">Да</span><span class="unchecked_text">Нет</span></div>
+                          <label for="print_delivery" class="radio_emul radioSwipe"><span class="radio_text">Самовывоз</span><span class="radio_toggle">
+                              <div class="toggle_pin"></div></span><span class="radio_text">С доставкой</span></label>
+                          <div class="delivery_address_block">
+                            <div class="form_cell">
+                              <label for="order_address" class="form_label">Адрес </label>
+                              <div class="input_w">
+                                <input id="order_address" placeholder="Город, Улица, Дом" class="f_input_v1 text_left validate[required]">
+                              </div>
+                              <div class="input_w text_right">
+                                <label class="check_emul">
+                                  <input type="checkbox" class="radio_input"><span class="check_text form_label icon_before">Запомнить этот адрес</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="params_block mod_2">
+                      <div class="form_cell">
+                        <label for="order_quantity" class="form_label">Количество</label>
+                        <div class="input_w">
+                          <input id="order_quantity" onkeypress="return event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57" placeholder="Нажмите для начала ввода" value="1000" maxlength="6" class="f_input_v1 validate[required,custom[integer],min[100],max[100000]]">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="submit_spacer"></div>
+                    <!--.params_block
+                    .form_cell.text_center
+                      button.btn_v2.start_btn.blue_btn: span Запросить цены
+                    
+                    -->
+                  </div>
+                  <div class="order_block_custom customBlock">
+                    <div class="order_block_custom_top">
+                      <!--.error_msg Пожалуйста заполните все текстовые поля !-->
+                      <div class="form_caption">Дополнительные параметры</div>
+                    </div>
+                    <div class="param_receiver">
+                      <div class="text_center hide_on_open param_receiver_tip">При желании Вы можете добавить дополнительныйпараметр, нажав на кнопку (+) </div>
+                      <div class="text_center mob_tip param_receiver_tip">Перетащите плашку влево или вправо, чтобы удалить добавленный параметр</div>
+                      <div class="paramReceiver"><span class="receivMarker"></span></div>
+                    </div>
+                    <div class="param_stack_overlay paramStackOverlay"></div>
+                    <div class="param_stack_holder paramStackHolder">
+                      <div class="param_stack paramStack">
+                        <div class="custom_param_unit paramUnit">
+                          <div class="custom_pu_inner mod_2"><a href="#" class="add_param_btn addParamBtn"></a>
+                            <div class="custom_param_val">
+                              <div class="custom_param_name">Другой материал</div>
+                              <div class="custom_param_default">По умолчанию: бумага</div>
+                            </div>
+                            <div class="custom_param_change">
+                              <div class="form_cell">
+                                <label for="order_quantity" class="form_label">Материал</label>
+                                <div class="input_w chosen_v1 no_search">
+                                  <select class="chosen-select">
+                                    <option value="0" data-title="Пленка">Пленка</option>
+                                    <option value="1" data-title="Пластик">Пластик</option>
+                                    <option value="2" data-title="Картон">Картон</option>
+                                    <option value="3" data-title="Баннерная сетка">Баннерная сетка</option>
+                                    <option value="4" data-title="Баннерная ткань">Баннерная ткань</option>
+                                    <option value="5" data-title="Бумага">Бумага</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="custom_param_unit paramUnit">
+                          <div class="custom_pu_inner"><a href="#" class="add_param_btn addParamBtn"></a>
+                            <div class="custom_param_val">
+                              <div class="custom_param_name">Цветность печати</div>
+                              <div class="custom_param_default">По умолчанию: цветная</div>
+                            </div>
+                            <div class="custom_param_change">
+                              <div class="form_cell text_center">
+                                <div class="radio_emul_block">
+                                  <input id="print_colored" checked type="checkbox" class="radio_input">
+                                  <div class="form_label">Цветность печати:</div>
+                                  <div class="param_val"><span class="unchecked_text">Черно-белая </span><span class="checked_text">Цветная</span></div>
+                                  <label for="print_colored" class="radio_emul radioSwipe"><span class="radio_text">Черно-белая </span><span class="radio_toggle">
+                                      <div class="toggle_pin"></div></span><span class="radio_text">Цветная</span></label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="custom_param_unit paramUnit">
+                          <div class="custom_pu_inner mod_2"><a href="#" class="add_param_btn addParamBtn"></a>
+                            <div class="custom_param_val">
+                              <div class="custom_param_name">Качество печати</div>
+                              <div class="custom_param_default">По умолчанию: 300 DPI</div>
+                            </div>
+                            <div class="custom_param_change">
+                              <div class="form_cell">
+                                <label for="order_quantity" class="form_label">Качество</label>
+                                <div class="input_w chosen_v1 no_search">
+                                  <select class="chosen-select">
+                                    <option value="0" data-title="50 DPI">50 DPI</option>
+                                    <option value="1" data-title="100 DPI">100 DPI</option>
+                                    <option value="2" data-title="500 DPI">500 DPI</option>
+                                    <option value="3" data-title="1000 DPI">1000 DPI</option>
+                                    <option value="4" data-title="2000 DPI">2000 DPI</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="custom_param_unit paramUnit">
+                          <div class="custom_pu_inner mod_1"><a href="#" class="add_param_btn addParamBtn"></a>
+                            <div class="custom_param_val">
+                              <div class="custom_param_name">Пост обработка</div>
+                            </div>
+                            <div class="custom_param_change">
+                              <div class="form_cell text_center"><span class="form_label">Пост оброботка:</span><span id="postprocessing_val" class="param_val"></span></div>
+                              <div class="form_cell">
+                                <ul class="postprocessing_list">
+                                  <li>
+                                    <label class="check_emul check_left_mod">
+                                      <input type="checkbox" class="radio_input postProcessingCheck"><span class="check_text form_label icon_before">Ламинация</span>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="check_emul check_left_mod">
+                                      <input type="checkbox" class="radio_input postProcessingCheck"><span class="check_text form_label icon_before">Скрепление</span>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="check_emul check_left_mod">
+                                      <input type="checkbox" class="radio_input postProcessingCheck"><span class="check_text form_label icon_before">Лакирование</span>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="check_emul check_left_mod">
+                                      <input type="checkbox" class="radio_input postProcessingCheck"><span class="check_text form_label icon_before">Тиснение</span>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="check_emul check_left_mod">
+                                      <input type="checkbox" class="radio_input postProcessingCheck"><span class="check_text form_label icon_before">Вырубка</span>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="custom_param_unit paramUnit">
+                          <div class="custom_pu_inner mod_2"><a href="#" class="add_param_btn addParamBtn"></a>
+                            <div class="custom_param_val">
+                              <div class="custom_param_name">Прикрепить файл печати</div>
+                            </div>
+                            <div class="custom_param_change">
+                              <div class="form_cell">
+                                <label for="file_attach" class="form_label">Файл печати</label>
+                                <div class="input_w attach_mod swipeVeil">
+                                  <label for="file_attach" class="file_label"></label>
+                                  <input id="file_attach" type="file" class="hide">
+                                  <input id="file_attach_name" class="f_input_v1 text_center unveilInput">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="custom_param_unit paramUnit">
+                          <div class="custom_pu_inner"><a href="#" class="add_param_btn addParamBtn"></a>
+                            <div class="custom_param_val">
+                              <div class="custom_param_name">Сообщение поставщику</div>
+                            </div>
+                            <div class="custom_param_change">
+                              <div class="form_cell">
+                                <label for="distrib_msg" class="form_label">Сообщение поставщику</label>
+                                <div class="input_w swipeVeil">
+                                  <textarea id="distrib_msg" placeholder="Введите любую дополнительную информацию о заказе, которую посчитаете нужной..." class="unveilInput f_input_v1 text_left"></textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div><a href="#" class="add_param_btn closeParamBtnMob dt_hidden"><span>Закрыть</span></a>
+                      </div>
+                    </div>
+                    <div class="submit_holder"><a href="#" class="add_param_btn addParamBtnMob dt_hidden"><span>Закрыть</span></a>
+                      <div class="params_block">
+                        <div class="form_cell text_center">
+                          <button class="btn_v2 start_btn blue_btn"><span>Запросить цены</span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="section_inner">
+          <div class="logo_block"><a href="#" class="logo"><img src="i/logo_small.png"></a></div>
+          <div class="soc_block"><span>СЛЕДИТЕ ЗА НАМИ:</span><a href="#" class="soc_link"><span class="fa fa-facebook"></span></a><a href="#" class="soc_link"><span class="fa fa-vk"></span></a></div>
+          <div class="copyright">OOO “ПРИНТЛОТ” ВСЕ ПРАВА ЗАЩИЩЕНЫ  (С) 2015</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

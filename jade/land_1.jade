@@ -1,0 +1,134 @@
+include mixins
+doctype html
+html(lang='ru')
+  +dev_head_2('Printlot land_1', true)
+
+  body
+    .wrapper
+      .base
+        div.header
+          .section_inner
+            .logo_block
+              a.logo(href='#'): img(src='i/logo_small.png')
+
+            ul.user_block
+              li: a.btn_v1.login_btn.gray_btn(href='#') Вход на сайт
+              li: a.gl_link(href='#') Регистрация типографии
+
+        .hero_block
+          .section_inner
+            a.service_logo: img(src='i/logo.png')
+
+            h2.hero_title Печатайте листовки А4 дешево !
+
+            a.btn_v2.start_btn.blue_btn.scrollTo(href='#start_anchor'): span Начать
+
+        div.main_content: .section_inner
+          ul.steps_block
+            li.step
+              .step_icon
+                +step_1()
+              .step_caption Шаг первый
+              p Выберите листовки, которые вам нужны
+
+            li.step
+              .step_icon
+                +step_2()
+              .step_caption Шаг второй
+              p Получите срок и цену нескольких типографий
+
+            li.step
+              .step_icon
+                +step_3()
+              .step_caption Шаг третий
+              p Печатайте листовки по лучшей цене
+
+          a.scroll_down_block(href='#')
+
+          #start_anchor
+          h2.block_caption Настройте нужные параметры
+
+          form#order_form(action='#'): .order_holder.any_height
+            .order_block
+              .error_msg Пожалуйста заполните все текстовые поля !
+              .form_caption Параметры листовки
+              .params_block
+                .form_cell.text_center
+                  .form_label Плотность:
+                  .param_val
+                    span#dpiRange_val 115 
+                    span  г/см²
+                .range_holder.toddler_v1.no_pips
+                  #dpi_range_toddler.range_toddler
+                    input.toddler_input
+
+                .form_cell.text_center: .radio_emul_block
+                  input#print_side.radio_input(checked , type='checkbox')
+                  .form_label Тип:
+                  .param_val
+                    span.unchecked_text Односторонняя
+                    span.checked_text Двусторонняя
+                  label.radio_emul.radioSwipe(for='print_side')
+                    span.radio_text Односторонняя
+                    span.radio_toggle: .toggle_pin
+                    span.radio_text Двусторонняя
+                
+                .form_cell.text_center: .radio_emul_block
+                  input#print_delivery.radio_input(type='checkbox', onchange="delivery_validation()")
+                  .form_label Доставка:
+                  .param_val
+                    span.checked_text Да
+                    span.unchecked_text Нет
+                  label.radio_emul.radioSwipe(for='print_delivery')
+                    span.radio_text Самовывоз
+                    span.radio_toggle: .toggle_pin
+                    span.radio_text С доставкой
+                  .delivery_address_block
+                    .form_cell
+                      label.form_label(for='order_address') Адрес 
+                      .input_w: input#order_address.f_input_v1.text_left( placeholder='Город, Улица, Дом' class='validate[required]')
+                      .input_w.text_right
+                        label.check_emul
+                          input.radio_input(type='checkbox')
+                          span.check_text.form_label.icon_before Запомнить этот адрес    
+
+              .params_block.mod_3
+                .form_cell
+                  label.form_label(for='order_quantity') Количество
+                  .input_w: input#order_quantity.f_input_v1( onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder='Нажмите для начала ввода' value='1000' maxlength=6 class='validate[required,custom[integer],min[100],max[100000]]')
+
+              .params_block.text_center
+                a.gl_link.gray_link(href='#') Настроить больше параметров
+                  
+            .order_block
+              .error_msg Пожалуйста заполните все текстовые поля !
+              .form_caption Ваши данные
+              .customer_info
+                .form_cell
+                  label.form_label(for='order_name') Имя
+                  .input_w: input#order_name.f_input_v1(placeholder='Нажмите для начала ввода' value='Арман Иванович Акопян' class='validate[required]')
+                .form_cell
+                  label.form_label(for='order_email') Е-mail
+                  .input_w: input#order_email.f_input_v1(placeholder='Нажмите для начала ввода' class='validate[required,custom[email]]')
+                .form_cell
+                  label.form_label(for='order_address') Адресс
+                  .input_w.chosen_v1.no_search
+                    select#order_address.chosen-select
+                      option(value=0 data-title='Москва') Москва
+                      option(value=1 data-title='Харьков') Харьков
+                      option(value=2 data-title='Киев') Киев
+
+              .form_cell.text_center
+                button.btn_v2.start_btn.blue_btn: span Запросить цены
+
+      .footer
+        .section_inner
+          .logo_block
+            a.logo(href='#'): img(src='i/logo_small.png')
+
+          .soc_block
+            span СЛЕДИТЕ ЗА НАМИ:
+            a.soc_link(href='#'): span.fa.fa-facebook
+            a.soc_link(href='#'): span.fa.fa-vk
+
+          .copyright OOO “ПРИНТЛОТ” ВСЕ ПРАВА ЗАЩИЩЕНЫ  (С) 2015

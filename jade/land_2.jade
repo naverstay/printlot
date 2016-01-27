@@ -1,0 +1,45 @@
+include mixins
+doctype html
+html(lang='ru')
+  +dev_head('Printlot land 2', false, true)
+
+  body
+    .wrapper
+      .base
+        div.header
+          .section_inner
+            .logo_block
+              a.logo(href='#'): img(src='i/logo_small.png')
+
+            ul.user_block
+              li: a.btn_v1.login_btn.light_gray_btn(href='#') Перейти на основной сайт
+
+        .hero_block
+          .section_inner
+            a.service_logo: img(src='i/logo.png')
+
+            h2.hero_title Мы поможем Вам найти лучшие цены  <br>  на печать листовок А4
+
+            a.btn_v2.start_btn.blue_btn(href='#'): span Новый запрос
+
+        div.main_content: .section_inner
+          ul.steps_block.thanks_mod
+            li.step
+              .step_icon.icon-done.icon_before
+              .thanks_block
+                .thanks_caption Спасибо!
+                .thanks_sub_caption Ваш запрос успешно отправлен
+                p Чтобы наблюдать за предложениями поставщиков Вы уже можете посетить свой личный кабинет. Мы позаботились о Вашем времени и создали для Вас профиль на основном сайте. Чтобы узнать пароль, пожалуйста,  <br>  проверьте свой почтовый ящик.
+                a.btn_v2.start_btn.blue_btn.scrollTo(href='#start_anchor'): span В личный кабинет
+
+      .footer
+        .section_inner
+          .logo_block
+            a.logo(href='#'): img(src='i/logo_small.png')
+
+          .soc_block
+            span СЛЕДИТЕ ЗА НАМИ:
+            a.soc_link(href='#'): span.fa.fa-facebook
+            a.soc_link(href='#'): span.fa.fa-vk
+
+          .copyright OOO “ПРИНТЛОТ” ВСЕ ПРАВА ЗАЩИЩЕНЫ  (С) 2015
