@@ -86,7 +86,7 @@ html(lang='ru')
                   .delivery_address_block
                     .form_cell
                       label.form_label(for='order_address') Адрес 
-                      .input_w: input#order_address.f_input_v1.text_left( placeholder='Город, Улица, Дом' class='validate[required]')
+                      .input_w.autocomplete_v1: input#order_address.f_input_v1.text_left.autoComplete( placeholder='Город, Улица, Дом' class='validate[required]')
                       .input_w.text_right
                         label.check_emul
                           input.radio_input(type='checkbox')
@@ -104,7 +104,7 @@ html(lang='ru')
 
             .order_block_custom.customBlock
               .order_block_custom_top
-                //.error_msg Пожалуйста заполните все текстовые поля !
+                //.error_msg Пожалуйста заполните все текстовые поля ! 
                 .form_caption Дополнительные параметры
               .param_receiver
                 

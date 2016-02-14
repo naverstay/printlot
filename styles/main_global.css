@@ -1535,6 +1535,37 @@ textarea.f_input_v1, .chosen_v1 textarea.chzn-single {
   display: none;
 }
 
+.autocomplete_v1 .autocomplete-suggestions {
+  left: 0;
+  width: 100% !important;
+  position: relative;
+  border: 1px solid #c5c5c5;
+  border-top-width: 0;
+  margin-top: -3px;
+  padding: 15px 0;
+  max-height: 250px;
+  background: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.autocomplete_v1 .autocomplete-suggestions .autocomplete-suggestion {
+  cursor: pointer;
+  display: block;
+  color: #5e5e5e;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  padding: 15px 39px;
+  font-size: 18px;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.autocomplete_v1 .autocomplete-suggestions .autocomplete-suggestion.autocomplete-selected, .autocomplete_v1 .autocomplete-suggestions .autocomplete-suggestion:hover {
+  background: #e3e3e3;
+}
+
 .text_center {
   text-align: center;
 }

@@ -16,6 +16,68 @@ $(function ($) {
 
     init_chosen();
 
+    var countries = [
+        {value: 'Andorra', data: 'AD'},
+        {value: 'Ukraine', data: 'UA'},
+        {value: 'Russian Federation', data: 'RF'},
+        {value: 'Andorra', data: 'AD'},
+        {value: 'Ukraine', data: 'UA'},
+        {value: 'Russian Federation', data: 'RF'},
+        {value: 'Andorra', data: 'AD'},
+        {value: 'Ukraine', data: 'UA'},
+        {value: 'Russian Federation', data: 'RF'},
+        {value: 'Andorra', data: 'AD'},
+        {value: 'Ukraine', data: 'UA'},
+        {value: 'Russian Federation', data: 'RF'},
+        {value: 'Zimbabwe', data: 'ZZ'}
+    ];
+
+    $('.autoComplete').each(function (ind) {
+        var inp = $(this);
+
+        inp.autocomplete({
+            //serviceUrl: '/autocomplete/countries',  todo uncomment with right url
+            lookup: countries,
+            orientation: 'auto',
+            width: 'auto',
+            zIndex: 1,
+            appendTo: inp.parent(),
+            onSelect: function (suggestion) {
+                console.log('You selected: ' + suggestion.value + ', ' + suggestion.data);
+            },
+            onSearchComplete: function (query, suggestions) {
+                console.log(query, suggestions);
+            },
+            beforeRender: function (container) {
+                console.log(container);
+
+                var firedEl = $(container);
+
+                var niceScrollBlock = firedEl;
+
+                if (niceScrollBlock.getNiceScroll().length) {
+                    niceScrollBlock.getNiceScroll().resize().show();
+                } else {
+                    niceScrollBlock.niceScroll({
+                        //cursorcolor : "#5c9942",
+                        cursorwidth: 4,
+                        cursorborderradius: 2,
+                        cursorborder: 'none',
+                        bouncescroll: false,
+                        autohidemode: false,
+                        horizrailenabled: false,
+                        railsclass: firedEl.data('rails_class'),
+                        railpadding: {top: 0, right: 0, left: 0, bottom: 0}
+                    });
+
+                    setTimeout(function () {
+                        firedEl.show();
+                    }, 3);
+                }
+            }
+        })
+    });
+
     $('.orderOtherBtn').on('click', function () {
         var firedEl = $(this).parent();
         if (!firedEl.hasClass('expanded')) firedEl.toggleClass('expanded');

@@ -21,6 +21,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="favicon/144x144.png"/>
     <link rel="apple-touch-icon" sizes="152x152" href="favicon/152x152.png"/>
     <script src="js/jquery1.10.js"></script>
+    <script src="js/jquery.autocomplete.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/chosen.jquery.js"></script>
     <script src="js/jquery.nicescroll.js"></script>
@@ -111,8 +112,8 @@
                           <div class="delivery_address_block">
                             <div class="form_cell">
                               <label for="order_address" class="form_label">Адрес </label>
-                              <div class="input_w">
-                                <input id="order_address" placeholder="Город, Улица, Дом" class="f_input_v1 text_left validate[required]">
+                              <div class="input_w autocomplete_v1">
+                                <input id="order_address" placeholder="Город, Улица, Дом" class="f_input_v1 text_left autoComplete validate[required]">
                               </div>
                               <div class="input_w text_right">
                                 <label class="check_emul">
@@ -141,7 +142,7 @@
                   </div>
                   <div class="order_block_custom customBlock">
                     <div class="order_block_custom_top">
-                      <!--.error_msg Пожалуйста заполните все текстовые поля !-->
+                      <!--.error_msg Пожалуйста заполните все текстовые поля ! -->
                       <div class="form_caption">Дополнительные параметры</div>
                     </div>
                     <div class="param_receiver">
